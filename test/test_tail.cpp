@@ -13,7 +13,7 @@ class MyShape
 public:
     std::string_view description() const
     {
-        return "Biggie vibies!";
+        return "Biggie vibes!";
     }
 
     int size() const
