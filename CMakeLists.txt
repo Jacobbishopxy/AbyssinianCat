@@ -3,7 +3,8 @@
 # @date:	2025/07/06 22:55:28 Sunday
 # @brief:
 
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.22)
+set(CMAKE_CXX_STANDARD 20)
 
 ###################################################################################################
 # env file
@@ -40,7 +41,7 @@ project(AbyssinianCat VERSION ${PROJECT_VERSION} LANGUAGES CXX)
 
 set(ABYSSINIAN_CAT_PREFIX "/opt/AbyssinianCat-${PROJECT_VERSION}")
 
-add_subdirectory(src/Pow)
+add_subdirectory(src/Paw)
 add_subdirectory(src/Tail)
 
 ###################################################################################################
@@ -73,3 +74,11 @@ install(EXPORT AbyssinianCatTargets
     NAMESPACE AbyssinianCat::
     DESTINATION ${ABYSSINIAN_CAT_PREFIX}/lib/cmake/AbyssinianCat
 )
+
+###################################################################################################
+
+option(BUILD_TESTS "Build tests for the project" OFF)
+
+if(BUILD_TESTS)
+  add_subdirectory(test)
+endif()

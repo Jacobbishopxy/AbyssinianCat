@@ -16,17 +16,7 @@ class Cat
 public:
     std::string_view yell() const
     {
-        static_cast<const Drv*>(this)->actionYell();
-    }
-
-    void run()
-    {
-        static_cast<Drv*>(this)->actionRun();
-    }
-
-    void hunt()
-    {
-        static_cast<Drv*>(this)->actionHunt();
+        return static_cast<const Drv*>(this)->actionYell();
     }
 
     void play()
@@ -39,14 +29,9 @@ public:
         static_cast<Drv*>(this)->actionSleep();
     }
 
-    int drink(int liter)
-    {
-        static_cast<Drv*>(this)->actionDrink(liter);
-    }
-
     int eat(std::string& food)
     {
-        static_cast<Drv*>(this)->actionEat(food);
+        return static_cast<Drv*>(this)->actionEat(food);
     }
 };
 
