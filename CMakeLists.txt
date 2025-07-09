@@ -77,8 +77,8 @@ install(EXPORT AbyssinianCatTargets
 
 ###################################################################################################
 
-option(BUILD_TESTS "Build tests for the project" OFF)
+# option(BUILD_TESTS "Build tests for the project" OFF)
 
-if(BUILD_TESTS)
-  add_subdirectory(test)
-endif()
+# if(BUILD_TESTS)
+#   add_subdirectory(test)
+# endif()

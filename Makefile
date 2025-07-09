@@ -45,8 +45,8 @@ install:
 
 test:
 	@echo "Building test directory... only works if `make install` executed"
-	@sudo $(CMAKE) -B build -DBUILD_TESTS=ON .
-	@sudo $(CMAKE) --build build
+	@mkdir -p ./test/$(BUILD_DIR)
+	@cd test/$(BUILD_DIR) && $(CMAKE) .. && $(MAKE)
 
 # Clean the build directory
 clean:
